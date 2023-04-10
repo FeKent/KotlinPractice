@@ -35,23 +35,11 @@ class MainActivity : ComponentActivity() {
                         intro = stringResource(R.string.intro_text),
                         main = stringResource(R.string.main_text)
                     )
-                    BannerImage()
                 }
             }
         }
     }
-}
-@Composable
-fun BannerImage(modifier: Modifier = Modifier) {
-    val image = painterResource(id = R.drawable.banner)
-    Box {
-        Image(
-            painter = image,
-            contentDescription = null,
-            contentScale = ContentScale.FillWidth
-        )
-    }
-}
+
 
 @Composable
 fun Article(title: String, intro: String, main: String, modifier: Modifier = Modifier) {
@@ -59,6 +47,11 @@ fun Article(title: String, intro: String, main: String, modifier: Modifier = Mod
         modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Top
     ) {
+        Image(
+            painter = painterResource(id = R.drawable.banner),
+            contentDescription = null,
+            contentScale = ContentScale.FillWidth
+        )
         Text(
             text = title,
             fontSize = 24.sp,
@@ -84,6 +77,5 @@ fun DefaultPreview() {
             intro = stringResource(R.string.intro_text),
             main = stringResource(R.string.main_text)
         )
-        BannerImage()
     }
-}
+}}
