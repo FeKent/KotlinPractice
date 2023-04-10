@@ -38,7 +38,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-
 @Composable
 fun Article(title: String, intro: String, main: String, modifier: Modifier = Modifier) {
     Column (
