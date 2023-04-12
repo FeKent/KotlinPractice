@@ -7,6 +7,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -18,6 +20,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.businesscard.ui.theme.BusinessCardTheme
 
 class MainActivity : ComponentActivity() {
@@ -30,7 +33,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Intro(name = stringResource(R.string.name), title = stringResource(R.string.title))
+                    Intro(
+                        name = stringResource(R.string.name),
+                        title = stringResource(R.string.title)
+                    )
                 }
             }
         }
@@ -43,6 +49,7 @@ fun Greeting(name: String) {
 
 }
 
+
 @Composable
 fun Intro(name: String, title: String, modifier: Modifier = Modifier) {
     Column(
@@ -50,12 +57,17 @@ fun Intro(name: String, title: String, modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
+            painter = painterResource(id = R.drawable.android_logo),
+            contentDescription = null,
+            modifier = Modifier.size(120.dp).padding(top = 20.dp, bottom = 50.dp)
+        )
+        Image(
             painter = painterResource(id = R.drawable.headshot),
             contentDescription = null,
-            contentScale = ContentScale.FillWidth
+            modifier = Modifier.size(150.dp)
         )
-        Text(text = name,)
-        Text(text = title,)
+        Text(text = name)
+        Text(text = title)
     }
 }
 
