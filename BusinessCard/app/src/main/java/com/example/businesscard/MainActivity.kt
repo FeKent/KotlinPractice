@@ -33,14 +33,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-<<<<<<< HEAD
                     Intro(
                         name = stringResource(R.string.name),
                         title = stringResource(R.string.title)
                     )
-=======
-                    Intro(name = stringResource(R.string.name), title = stringResource(R.string.title))
->>>>>>> 9f30d66af8f4fc5efb5a3d327fb380fad3466f44
                 }
             }
         }
@@ -53,10 +49,6 @@ fun Greeting(name: String) {
 
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 9f30d66af8f4fc5efb5a3d327fb380fad3466f44
 @Composable
 fun Intro(name: String, title: String, modifier: Modifier = Modifier) {
     Column(
@@ -64,7 +56,6 @@ fun Intro(name: String, title: String, modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-<<<<<<< HEAD
             painter = painterResource(id = R.drawable.android_logo),
             contentDescription = null,
             modifier = Modifier.size(120.dp).padding(top = 20.dp, bottom = 50.dp)
@@ -72,18 +63,10 @@ fun Intro(name: String, title: String, modifier: Modifier = Modifier) {
         Image(
             painter = painterResource(id = R.drawable.headshot),
             contentDescription = null,
-            modifier = Modifier.size(150.dp)
+            contentScale = ContentScale.FillWidth
         )
         Text(text = name)
         Text(text = title)
-=======
-            painter = painterResource(id = R.drawable.headshot),
-            contentDescription = null,
-            contentScale = ContentScale.FillWidth
-        )
-        Text(text = name,)
-        Text(text = title,)
->>>>>>> 9f30d66af8f4fc5efb5a3d327fb380fad3466f44
     }
 }
 
