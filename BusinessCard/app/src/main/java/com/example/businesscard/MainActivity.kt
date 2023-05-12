@@ -80,10 +80,12 @@ fun Intro(name: String, title: String, modifier: Modifier = Modifier) {
             painter = painterResource(id = R.drawable.headshot),
             contentDescription = "Picture of a woman",
             contentScale = ContentScale.FillWidth,
-            modifier = Modifier.padding(top = 50.dp).size(150.dp)
+            modifier = Modifier
+                .padding(top = 50.dp)
+                .size(150.dp)
         )
         Text(text = name, color = Color.White, fontSize = 36.sp, fontWeight = FontWeight.Light)
-        Text(text = title, fontWeight = FontWeight.Bold ,color = Color(parseColor("#3DDC84")))
+        Text(text = title, fontWeight = FontWeight.Bold, color = Color(parseColor("#3DDC84")))
         Row(modifier = Modifier.padding(top = 150.dp)) {
             Icon(
                 Icons.Rounded.Phone,
